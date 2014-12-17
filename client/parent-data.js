@@ -16,6 +16,8 @@ Template.body.helpers({
       console.log('Current data', Template.currentData());
       console.log('Parent(0) data', Template.parentData(0));
       console.log('Parent(1) data', Template.parentData(1));
+      console.log('Parent(2) data', Template.parentData(2));
+      console.log('Parent(3) data', Template.parentData(3));
       console.groupEnd();
     }
   })
