@@ -1,0 +1,34 @@
+<body>
+  <h1>Click on one of the player names and watch the console.</h1>
+  <h2>Template included by block template</h2>
+
+  <ol>
+  {{#myEach players}}
+    {{> player}}
+  {{/myEach}}
+  </ol>
+
+  <h2>The same template included by each</h2>
+  <ol style="list-style-type: upper-roman;">
+    {{#each players}}
+      {{> player}}
+    {{/each}}
+  </ol>
+
+  <h2>The same template included by a wrapper</h2>
+  {{> playerWrapper team}}
+</body>
+
+<template name="playerWrapper">
+  Player: {{> player this.captain}}
+</template>
+
+<template name="player">
+  <li>{{name}}</li>
+</template>
+
+<template name="myEach">
+  {{#each this}}
+    {{> Template.contentBlock this}}
+  {{/each}}
+</template>
